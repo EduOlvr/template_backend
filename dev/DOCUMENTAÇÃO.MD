@@ -1,4 +1,4 @@
-**Documentação**
+# **Documentação**
 
 ## **Índice**
 
@@ -15,8 +15,6 @@
 * [Testes no Postman]
 
 * [Status do Projeto]
-
-* [Próximos Passos]
 
 ---
 
@@ -177,9 +175,11 @@ Authorization: Bearer \<access\_token\>
 
 * Validação RS256 com JWKS
 
-* Keycloak via Docker
-
 * Rotas protegidas
+
+* Clients configurados corretamente
+
+* Roles e realms configurados no Keycloak
 
 ### **Em Desenvolvimento**
 
@@ -189,55 +189,8 @@ Authorization: Bearer \<access\_token\>
 
 * Verificação de token
 
-Entidade User
-
 * Sincronização Keycloak → Banco de dados
-
-### **Pendentes**
-
-* Rate limiting
-
-* CORS avançado
-
-* Audit logging
-
-* Guards baseados em roles
-
-* Documentação Swagger
-
-* CI/CD
 
 ---
 
-## **Próximos Passos**
-
-### **Prioridade Alta**
-
-1. Implementar refresh token
-
-2. Implementar logout
-
-3. Criar entidade User
-
-4. Sincronizar usuários do Keycloak
-
-### **Prioridade Média**
-
-1. Configurar CORS
-
-2. Implementar role guards
-
-3. Logging e monitoramento
-
-4. Variáveis de produção
-
-### **Prioridade Baixa**
-
-1. Rate limiting
-
-2. Swagger/OpenAPI
-
-3. Testes automatizados
-
-4. Pipeline CI/CD
 
