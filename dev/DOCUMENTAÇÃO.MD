@@ -2,21 +2,21 @@
 
 ## **Índice**
 
-* [Visão Geral](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#vis%C3%A3o-geral)
+* [Visão Geral]
 
-* [Arquitetura](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#arquitetura)
+* [Arquitetura]
 
-* [Setup e Execução](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#setup-e-execu%C3%A7%C3%A3o)
+* [Setup e Execução]
 
-* [Autenticação JWT](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#autentica%C3%A7%C3%A3o-jwt)
+* [Autenticação JWT]
 
-* [Rotas da API](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#rotas-da-api)
+* [Rotas da API]
 
-* [Testes no Postman](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#testes-no-postman)
+* [Testes no Postman]
 
-* [Status do Projeto](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#status-do-projeto)
+* [Status do Projeto]
 
-* [Próximos Passos](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#pr%C3%B3ximos-passos)
+* [Próximos Passos]
 
 ---
 
