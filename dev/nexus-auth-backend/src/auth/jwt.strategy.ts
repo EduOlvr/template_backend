@@ -29,7 +29,6 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
     const jwksUri = `${envHost}/realms/${realm}/protocol/openid-connect/certs`;
     const issuer = `${envHost}/realms/${realm}`;
 
-    // Validação - audience é obrigatório, hosts têm fallback
     if (!audience) {
       throw new Error('KEYCLOAK_AUDIENCE é obrigatório');
     }
@@ -47,7 +46,6 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
         if (err) {
           this.logger.error(`Falha na conexão com Keycloak em ${envHost}: ${err.message}`);
           
-          // Sugere hosts alternativos em desenvolvimento
           if (process.env.NODE_ENV === 'development') {
             this.logger.debug('💡 Tentar hosts alternativos: 127.0.0.1:8080 ou host.docker.internal:8080');
           }
@@ -64,7 +62,7 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
       secretOrKeyProvider,
       algorithms: ['RS256'],
       issuer,
-      audience, // ← Obrigatório
+      audience,
       ignoreExpiration: false,
     });
 
