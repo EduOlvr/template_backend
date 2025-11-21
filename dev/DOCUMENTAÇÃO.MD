@@ -1,4 +1,4 @@
-# **Nexus Auth Backend \- Documentação Completa**
+**Documentação**
 
 ## **Índice**
 
@@ -22,15 +22,13 @@
 
 ## **Visão Geral**
 
-Sistema de autenticação backend desenvolvido em NestJS integrado com Keycloak, fornecendo autenticação JWT federada com validação RS256 via JWKS.
+Sistema de autenticação backend desenvolvido em NestJS integrado com Keycloak, fornecendo autenticação JWT com validação RS256 via JWKS.
 
 ### **Stack Tecnológica**
 
-* Backend: NestJS \+ TypeScript
+* Backend: NestJS
 
 * Autenticação: Keycloak \+ Passport JWT
-
-* Tokens: JWT RS256 com validação JWKS
 
 * Container: Docker \+ Docker Compose
 
@@ -80,16 +78,12 @@ dev/
 
 git clone \<https://github.com/EduOlvr/template\_backend.gitl\>
 
-2. Configurar variáveis
-
-cp .env.example .env
-
-3. Iniciar Keycloak
+2. Iniciar Keycloak
 
 cd keycloak-server  
 docker-compose up \-d
 
-4. Instalar dependências e rodar NestJS (em outro terminal)
+3. Instalar dependências e rodar NestJS (em outro terminal)
 
 npm install  
 npm run start:dev
