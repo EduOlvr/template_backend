@@ -1,0 +1,13 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.4.5
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    command: 
+      - start-dev
+      - --import-realm
+    volumes:
+      - ./realm-nexus.json:/opt/keycloak/data/import/realm.json
