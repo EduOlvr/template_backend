@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+  # nest-app:
+  #   container_name: nest-app
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "4000:4000"
+  #   depends_on:
+  #     - postgres
+  #   env_file:
+  #     - .env
+  #   volumes:
+  #     - .:/app
+  #   networks:
+  #     - nest-network
+
+  postgres:
+    container_name: nexusDB
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nexusDB
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nest-network
+
+networks:
+  nest-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

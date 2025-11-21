@@ -1,0 +1,14 @@
+server:
+  host: localhost:4000
+  PORT: 4000
+
+db:
+  type: postgres
+  host: localhost
+  port: 5433
+  username: postgres
+  password: postgres
+  database: nexusDB
+  synchronize: true
+  migrationsRun: true
+  logging: true
