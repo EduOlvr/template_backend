@@ -138,7 +138,6 @@ GET /
 ### **Rotas Protegidas**
 
 GET /me  
-GET /profile
 
 ### **Rotas em Desenvolvimento**
 
