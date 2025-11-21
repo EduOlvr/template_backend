@@ -19,17 +19,4 @@ export class AppController {
       user: req.user,
     };
   }
-
-  @UseGuards(AuthGuard('jwt'))
-  @Get('profile')
-  getProfile(@Req() req: any) {
-    return {
-      user: {
-        id: req.user.sub,
-        email: req.user.email,
-        name: req.user.name,
-        roles: req.user.roles,
-      },
-    };
-  }
 }
