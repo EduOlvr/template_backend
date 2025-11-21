@@ -1,36 +1,32 @@
-# **Nexus Auth Backend \- Documentação Completa**
+# **Documentação**
 
 ## **Índice**
 
-* [Visão Geral](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#vis%C3%A3o-geral)
+* [Visão Geral]
 
-* [Arquitetura](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#arquitetura)
+* [Arquitetura]
 
-* [Setup e Execução](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#setup-e-execu%C3%A7%C3%A3o)
+* [Setup e Execução]
 
-* [Autenticação JWT](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#autentica%C3%A7%C3%A3o-jwt)
+* [Autenticação JWT]
 
-* [Rotas da API](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#rotas-da-api)
+* [Rotas da API]
 
-* [Testes no Postman](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#testes-no-postman)
+* [Testes no Postman]
 
-* [Status do Projeto](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#status-do-projeto)
-
-* [Próximos Passos](https://chatgpt.com/c/6920c89f-711c-832d-b400-62659bfb500a#pr%C3%B3ximos-passos)
+* [Status do Projeto]
 
 ---
 
 ## **Visão Geral**
 
-Sistema de autenticação backend desenvolvido em NestJS integrado com Keycloak, fornecendo autenticação JWT federada com validação RS256 via JWKS.
+Sistema de autenticação backend desenvolvido em NestJS integrado com Keycloak, fornecendo autenticação JWT com validação RS256 via JWKS.
 
 ### **Stack Tecnológica**
 
-* Backend: NestJS \+ TypeScript
+* Backend: NestJS
 
 * Autenticação: Keycloak \+ Passport JWT
-
-* Tokens: JWT RS256 com validação JWKS
 
 * Container: Docker \+ Docker Compose
 
@@ -80,16 +76,12 @@ dev/
 
 git clone \<https://github.com/EduOlvr/template\_backend.gitl\>
 
-2. Configurar variáveis
-
-cp .env.example .env
-
-3. Iniciar Keycloak
+2. Iniciar Keycloak
 
 cd keycloak-server  
 docker-compose up \-d
 
-4. Instalar dependências e rodar NestJS (em outro terminal)
+3. Instalar dependências e rodar NestJS (em outro terminal)
 
 npm install  
 npm run start:dev
@@ -146,7 +138,6 @@ GET /
 ### **Rotas Protegidas**
 
 GET /me  
-GET /profile
 
 ### **Rotas em Desenvolvimento**
 
@@ -183,9 +174,11 @@ Authorization: Bearer \<access\_token\>
 
 * Validação RS256 com JWKS
 
-* Keycloak via Docker
-
 * Rotas protegidas
+
+* Clients configurados corretamente
+
+* Roles e realms configurados no Keycloak
 
 ### **Em Desenvolvimento**
 
@@ -195,55 +188,8 @@ Authorization: Bearer \<access\_token\>
 
 * Verificação de token
 
-Entidade User
-
 * Sincronização Keycloak → Banco de dados
-
-### **Pendentes**
-
-* Rate limiting
-
-* CORS avançado
-
-* Audit logging
-
-* Guards baseados em roles
-
-* Documentação Swagger
-
-* CI/CD
 
 ---
 
-## **Próximos Passos**
-
-### **Prioridade Alta**
-
-1. Implementar refresh token
-
-2. Implementar logout
-
-3. Criar entidade User
-
-4. Sincronizar usuários do Keycloak
-
-### **Prioridade Média**
-
-1. Configurar CORS
-
-2. Implementar role guards
-
-3. Logging e monitoramento
-
-4. Variáveis de produção
-
-### **Prioridade Baixa**
-
-1. Rate limiting
-
-2. Swagger/OpenAPI
-
-3. Testes automatizados
-
-4. Pipeline CI/CD
 
