@@ -47,7 +47,7 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
           this.logger.error(`Falha na conexão com Keycloak em ${envHost}: ${err.message}`);
           
           if (process.env.NODE_ENV === 'development') {
-            this.logger.debug('💡 Tentar hosts alternativos: 127.0.0.1:8080 ou host.docker.internal:8080');
+            this.logger.debug('Tentar hosts alternativos: 127.0.0.1:8080 ou host.docker.internal:8080');
           }
           
           done(new UnauthorizedException('Serviço de autenticação indisponível'), null);
