@@ -1,5 +1,43 @@
 version: "3.8"
+
 services:
+  postgres:
+    container_name: nexusDB
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nexusDB
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nest-network
+
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.4.5
+    container_name: keycloak-auth
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/nexusDB
+      KC_DB_USERNAME: postgres
+      KC_DB_PASSWORD: postgres
+    ports:
+      - "8080:8080"
+    command: 
+      - start-dev
+      - --import-realm
+    volumes:
+      - ./realm-nexus.json:/opt/keycloak/data/import/realm.json
+    depends_on:
+      - postgres
+    networks:
+      - nest-network
+
   # nest-app:
   #   container_name: nest-app
   #   build:
@@ -15,21 +53,6 @@ services:
   #     - .:/app
   #   networks:
   #     - nest-network
-
-  postgres:
-    container_name: nexusDB
-    image: postgres:14
-    restart: always
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: nexusDB
-    ports:
-      - "5433:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - nest-network
 
 networks:
   nest-network:
