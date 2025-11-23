@@ -25,6 +25,6 @@ export class UserEntity extends BaseEntity {
     description: 'Senha do usuário (hash)',
     example: '$2b$10$...',
   })
-  @Column()
-  password: string;
+  @Column({ type: 'varchar', nullable: true })
+  password: string | null;
 }

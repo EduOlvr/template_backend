@@ -12,3 +12,10 @@ db:
   synchronize: true
   migrationsRun: true
   logging: true
+keycloak:
+  realm: "nexus"
+  issuer: "http://localhost:8080/realms/nexus"
+  clientId: "api-nexus"
+  clientSecret: ""
+  tokenEndpoint: "http://localhost:8080/realms/nexus/protocol/openid-connect/token"
+  jwksUri: "http://localhost:8080/realms/nexus/protocol/openid-connect/certs"
